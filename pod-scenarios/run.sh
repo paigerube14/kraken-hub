@@ -16,4 +16,6 @@ envsubst < /root/kraken/config/config.yaml.template > /root/kraken/config/config
 
 # Run Kraken
 cd /root/kraken
+
+pip list | grep powerfulseal
 python3 run_kraken.py --config=config/config.yaml
