@@ -20,6 +20,7 @@ The following environment variables can be set on the host running the container
 
 Parameter               | Description                                                           | Default
 ----------------------- | -----------------------------------------------------------------     | ------------------------------------ |
+CERBERUS_KUBECONFIG     | Path to the kubeconfig to access the cluster API | /root/.kube/config |
 CERBERUS_PORT           | HTTP server port where cerberus status is published                   | 8080                                 |
 CERBERUS_WATCH_NODES    | Set to True for the cerberus to monitor the cluster nodes             | True                                 |
 CERBERUS_WATCH_OPERATORS | Set to True for cerberus to monitor cluster operators                | True                                 |
