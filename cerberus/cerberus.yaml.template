@@ -1,6 +1,6 @@
 cerberus:
     distribution: openshift                              # Distribution can be kubernetes or openshift
-    kubeconfig_path: $KUBECONFIG_2                      # Path to kubeconfig
+    kubeconfig_path: $KUBECONFIG                      # Path to kubeconfig
     port: $CERBERUS_PORT                                           # http server port where cerberus status is published
     watch_nodes: $CERBERUS_WATCH_NODES                                    # Set to True for the cerberus to monitor the cluster nodes
     watch_cluster_operators: $CERBERUS_WATCH_OPERATORS                        # Set to True for cerberus to monitor cluster operators
