@@ -5,6 +5,13 @@ log() {
   echo -e "\033[1m$(date "+%d-%m-%YT%H:%M:%S") ${*}\033[0m"
 }
 
+
+set_prom() {
+  export PROMETHEUS_ENDPOINT=https://$(oc get route -n openshift-monitoring prometheus-k8s -o jsonpath="{.spec.host}")
+  export PROMETHEUS_TOKEN=$(oc create token -n openshift-monitoring prometheus-k8s --duration=6h || oc sa get-token -n openshift-monitoring prometheus-k8s || oc sa new-token -n openshift-monitoring prometheus-k8s)
+}
+
+
 # Check if oc is installed
 check_oc() {
   log "Checking if OpenShift client is installed"

@@ -18,6 +18,10 @@ source $ROOT_FOLDER/common_run.sh
 [ -z "$NAMESPACE" ] && echo "error: NAMESPACE not set, run the recommender \
   with the -e NAMESPACE=<namespace> option" && exit 1
 
+if [ "$DISTRIBUTION" == "openshift"]; then
+  set_prom
+fi
+
 [ -z "$PROMETHEUS_ENDPOINT" ] && echo "error: PROMETHEUS_ENDPOINT not set, run the recommender \
   with the -e PROMETHEUS_ENDPOINT=<prometheus_url> option" && exit 1
 
