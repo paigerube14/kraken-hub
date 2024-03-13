@@ -3,7 +3,7 @@
 set -ex
 
 ROOT_FOLDER="/root"
-KUBECONFIG_PATH="$ROOT_FOLDER/.kube/config"
+KUBECONFIG_PATH=${KRKN_KUBE_CONFIG:=/$ROOT_FOLDER/.kube/config}
 KRAKEN_FOLDER="$ROOT_FOLDER/kraken"
 
 # Source env.sh to read all the vars
@@ -32,7 +32,7 @@ cd $KRAKEN_FOLDER
 
 
 python3.9 utils/chaos_recommender/chaos_recommender.py \
--o -k $KRKN_KUBE_CONFIG \
+-o \
 -M $MEM_TESTS \
 -G $GENERIC_TESTS \
 -N $NETWORK_TESTS \
