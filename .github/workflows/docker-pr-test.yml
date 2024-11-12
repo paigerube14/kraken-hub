@@ -1,0 +1,15 @@
+name: Docker Test PR Image CI
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@main
+    - name: Add krknctl metadata to Dockerfiles
+      run: |
+        bash build.sh
+    - name: Build the Docker images
+      run: docker compose build --parallel
