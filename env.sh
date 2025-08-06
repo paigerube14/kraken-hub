@@ -60,3 +60,10 @@ export HEALTH_CHECK_BEARER_TOKEN=${HEALTH_CHECK_BEARER_TOKEN:=""}
 export HEALTH_CHECK_AUTH=${HEALTH_CHECK_AUTH:=""}
 export HEALTH_CHECK_EXIT_ON_FAILURE=${HEALTH_CHECK_EXIT_ON_FAILURE:=""}
 export HEALTH_CHECK_VERIFY=${HEALTH_CHECK_VERIFY:=False}
+
+# Kube Virt Health Checks configuration
+export KUBE_VIRT_CHECK=${KUBE_VIRT_CHECK:2}                                        # Interval in seconds to perform virt checks, default value is 2 seconds
+export KUBE_VIRT_NAMESPACE=${KUBE_VIRT_NAMESPACE:=""}                                             # Namespace where to find VMI's
+export KUBE_VIRT_NAME=${KUBE_VIRT_NAME:=""}                                                 # Regex Name style of VMI's to watch, optional, will watch all VMI names in the namespace if left blank
+export KUBE_VIRT_FAILURES=${KUBE_VIRT_FAILURES:=False}                                    # Boolean of whether to show all VMI's failures and successful ssh connection (False), or only failure status' (True) 
+export KUBE_VIRT_DISCONNECTED=${KUBE_VIRT_DISCONNECTED:=False} 
