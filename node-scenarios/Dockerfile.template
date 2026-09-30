@@ -5,7 +5,9 @@ FROM quay.io/krkn-chaos/krkn:latest
 ENV KUBECONFIG /home/krkn/.kube/config
 
 USER root
-RUN yum install -y OpenIPMI ipmitool
+RUN yum clean all && \
+    rm -rf /var/cache/libdnf5 /var/cache/dnf && \
+    yum install -y --setopt=zchunk=False OpenIPMI ipmitool
 USER krkn
 
 # Copy configurations
